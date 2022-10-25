@@ -18,15 +18,16 @@ defmodule ApiWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+  end
+
+  # Other scopes may use custom stacks.
+  scope "/api", ApiWeb do
+    pipe_through :api
+
     resources "/users", UserController
     resources "/clocks", ClockController, except: [:new, :edit]
     resources "/workingtime", WorkingtimesController, except: [:new, :edit]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", ApiWeb do
-  #   pipe_through :api
-  # end
 
   # Enables LiveDashboard only for development
   #

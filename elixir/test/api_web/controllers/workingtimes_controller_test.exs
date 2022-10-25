@@ -6,12 +6,12 @@ defmodule ApiWeb.WorkingtimesControllerTest do
   alias Api.Account.Workingtimes
 
   @create_attrs %{
-    end: ~U[2022-10-24 14:44:00Z],
-    start: ~U[2022-10-24 14:44:00Z]
+    end: ~U[2022-10-24 15:01:00Z],
+    start: ~U[2022-10-24 15:01:00Z]
   }
   @update_attrs %{
-    end: ~U[2022-10-25 14:44:00Z],
-    start: ~U[2022-10-25 14:44:00Z]
+    end: ~U[2022-10-25 15:01:00Z],
+    start: ~U[2022-10-25 15:01:00Z]
   }
   @invalid_attrs %{end: nil, start: nil}
 
@@ -35,8 +35,8 @@ defmodule ApiWeb.WorkingtimesControllerTest do
 
       assert %{
                "id" => ^id,
-               "end" => "2022-10-24T14:44:00Z",
-               "start" => "2022-10-24T14:44:00Z"
+               "end" => "2022-10-24T15:01:00Z",
+               "start" => "2022-10-24T15:01:00Z"
              } = json_response(conn, 200)["data"]
     end
 
@@ -57,8 +57,8 @@ defmodule ApiWeb.WorkingtimesControllerTest do
 
       assert %{
                "id" => ^id,
-               "end" => "2022-10-25T14:44:00Z",
-               "start" => "2022-10-25T14:44:00Z"
+               "end" => "2022-10-25T15:01:00Z",
+               "start" => "2022-10-25T15:01:00Z"
              } = json_response(conn, 200)["data"]
     end
 
