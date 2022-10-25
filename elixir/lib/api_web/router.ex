@@ -19,6 +19,8 @@ defmodule ApiWeb.Router do
 
     get "/", PageController, :index
     resources "/users", UserController
+    resources "/clocks", ClockController, except: [:new, :edit]
+    resources "/workingtime", WorkingtimesController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.

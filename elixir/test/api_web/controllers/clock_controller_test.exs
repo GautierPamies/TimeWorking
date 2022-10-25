@@ -6,11 +6,11 @@ defmodule ApiWeb.ClockControllerTest do
   alias Api.Accounts.Clock
 
   @create_attrs %{
-    status: ~N[2022-10-24 14:34:00],
+    status: ~N[2022-10-24 14:43:00],
     time: "some time"
   }
   @update_attrs %{
-    status: ~N[2022-10-25 14:34:00],
+    status: ~N[2022-10-25 14:43:00],
     time: "some updated time"
   }
   @invalid_attrs %{status: nil, time: nil}
@@ -35,7 +35,7 @@ defmodule ApiWeb.ClockControllerTest do
 
       assert %{
                "id" => ^id,
-               "status" => "2022-10-24T14:34:00",
+               "status" => "2022-10-24T14:43:00",
                "time" => "some time"
              } = json_response(conn, 200)["data"]
     end
@@ -57,7 +57,7 @@ defmodule ApiWeb.ClockControllerTest do
 
       assert %{
                "id" => ^id,
-               "status" => "2022-10-25T14:34:00",
+               "status" => "2022-10-25T14:43:00",
                "time" => "some updated time"
              } = json_response(conn, 200)["data"]
     end

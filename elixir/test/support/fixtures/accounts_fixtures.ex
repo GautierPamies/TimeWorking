@@ -125,4 +125,19 @@ defmodule Api.AccountsFixtures do
 
     clock
   end
+
+  @doc """
+  Generate a clock.
+  """
+  def clock_fixture(attrs \\ %{}) do
+    {:ok, clock} =
+      attrs
+      |> Enum.into(%{
+        status: ~N[2022-10-24 14:43:00],
+        time: "some time"
+      })
+      |> Api.Accounts.create_clock()
+
+    clock
+  end
 end

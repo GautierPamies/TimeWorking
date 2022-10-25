@@ -63,4 +63,19 @@ defmodule Api.AccountFixtures do
 
     workingtimes
   end
+
+  @doc """
+  Generate a workingtimes.
+  """
+  def workingtimes_fixture(attrs \\ %{}) do
+    {:ok, workingtimes} =
+      attrs
+      |> Enum.into(%{
+        end: ~U[2022-10-24 14:44:00Z],
+        start: ~U[2022-10-24 14:44:00Z]
+      })
+      |> Api.Account.create_workingtimes()
+
+    workingtimes
+  end
 end
