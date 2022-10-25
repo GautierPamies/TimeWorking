@@ -4,10 +4,8 @@ alias mix="docker-compose run --rm tm-phoenix mix"
 cd elixir/ 
 mix deps.get --force
 sleep 20
-mix ecto.create
 mix ecto.migrate
 docker-compose up -d tm-phoenix
 docker-compose down -d tm-phoenix
-mix ecto.create
 mix ecto.migrate
 docker-compose up -d tm-phoenix

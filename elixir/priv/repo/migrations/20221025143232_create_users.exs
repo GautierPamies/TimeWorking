@@ -5,6 +5,8 @@ defmodule Api.Repo.Migrations.CreateUsers do
     create table(:users) do
       add :username, :string
       add :email, :string
+      add :password, :string
+      add :salt, :string
 
       timestamps()
     end

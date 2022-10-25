@@ -5,7 +5,7 @@ config :api, Api.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "tm-db",
-  database: "api_dev",
+  database: "time_manager",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
