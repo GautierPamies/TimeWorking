@@ -6,6 +6,11 @@ defmodule ApiWeb.UserController do
 
   action_fallback ApiWeb.FallbackController
 
+  def index(conn, %{"email" => email, "password" => password}) do
+    users = Accounts.get_user_by_email_and_password(email, password)
+    render(conn, "index.json", users: users)
+  end
+
   def index(conn, %{"email" => email, "username" => username}) do
     users = Accounts.get_user_by_email_and_username(email, username)
     render(conn, "index.json", users: users)
