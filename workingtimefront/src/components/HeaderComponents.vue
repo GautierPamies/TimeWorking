@@ -2,7 +2,9 @@
   <v-card id="lateral">
     <v-toolbar dark tabs flat color="indigo">
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title>Page title</v-toolbar-title>
+      <v-tab @click="goToHome()">
+        <v-toolbar-title>Working Time</v-toolbar-title></v-tab
+      >
       <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
@@ -12,9 +14,8 @@
       </v-btn>
       <template v-slot:extension>
         <v-tabs v-model="tabs" align-with-title>
-          <v-tab href="/#/login"> Login </v-tab>
-          <v-tab href="#two"> Register </v-tab>
-          <v-tab href="#three"> Item Three </v-tab>
+          <v-tab @click="goToLogin()"> Login </v-tab>
+          <v-tab @click="goToRegister()"> Register </v-tab>
           <v-tabs-slider color="pink"></v-tabs-slider>
         </v-tabs>
       </template>
@@ -53,6 +54,18 @@ export default {
     hidden: false,
     tabs: null,
   }),
+
+  methods: {
+    goToLogin() {
+      this.$router.push("/login");
+    },
+    goToRegister() {
+      this.$router.push("/register");
+    },
+    goToHome() {
+      this.$router.push("/");
+    },
+  },
 
   computed: {
     activeFab() {
