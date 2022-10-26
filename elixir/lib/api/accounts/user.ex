@@ -16,5 +16,6 @@ defmodule Api.Accounts.User do
     user
     |> cast(attrs, [:username, :email, :password, :salt])
     |> validate_required([:username, :email, :password, :salt])
+    |> validate_format(:email, ~r/^[A-Za-z0-9._%+-+']+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)
   end
 end
