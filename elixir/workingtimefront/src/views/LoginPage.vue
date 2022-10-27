@@ -1,12 +1,15 @@
 <template>
   <v-app id="inspire">
+    <div>
+      {{ info }}
+    </div>
     <v-content>
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
           <v-flex xs12 sm8 md4>
             <v-card class="elevation-12">
               <v-toolbar dark color="primary">
-                <v-toolbar-title>Login form</v-toolbar-title>
+                <v-toolbar-title>Login form </v-toolbar-title>
               </v-toolbar>
               <v-card-text>
                 <v-form>
@@ -32,16 +35,20 @@
   </v-app>
 </template>
 
-//
 <script>
-// export default {
-//   name: "Login",
-//   props: {
-//     source: String,
-//   },
-// };
-//
-</script>
+import axios from "axios";
 
-//
-<style></style>
+export default {
+  data() {
+    return {
+      info: null,
+    };
+  },
+
+  mounted() {
+    axios
+      .get("http://localhost:4000/api/users/")
+      .then((response) => (this.info = response.data));
+  },
+};
+</script>

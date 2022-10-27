@@ -1,4 +1,5 @@
 import Vue from "vue";
+import MyCollaborators from "../views/MyCollaborators.vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginPage from "../views/LoginPage.vue";
@@ -17,6 +18,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: LoginPage,
+  },
+  {
+    path: "/mycollaborators",
+    name: "mycollaborators",
+    component: MyCollaborators,
   },
   {
     path: "/register",
