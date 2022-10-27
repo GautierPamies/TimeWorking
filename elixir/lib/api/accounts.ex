@@ -36,7 +36,10 @@ defmodule Api.Accounts do
 
   """
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 1c681c8de8ace7485769dc5dadf90685196df86d
 
   def get_user_by_email_and_username(email, username) do
     User
@@ -50,7 +53,12 @@ defmodule Api.Accounts do
     |> Repo.all()
   end
 
+<<<<<<< HEAD
 >>>>>>> testing_users
+=======
+=======
+>>>>>>> Front
+>>>>>>> 1c681c8de8ace7485769dc5dadf90685196df86d
   def get_user!(id), do: Repo.get!(User, id)
 
   @doc """
