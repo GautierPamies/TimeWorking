@@ -35,6 +35,7 @@ defmodule Api.Accounts do
       ** (Ecto.NoResultsError)
 
   """
+<<<<<<< HEAD
 
   def get_user_by_email_and_username(email, username) do
     User
@@ -48,6 +49,8 @@ defmodule Api.Accounts do
     |> Repo.all()
   end
 
+=======
+>>>>>>> Front
   def get_user!(id), do: Repo.get!(User, id)
 
   @doc """
