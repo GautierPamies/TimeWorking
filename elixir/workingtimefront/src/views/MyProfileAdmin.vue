@@ -17,7 +17,7 @@
               class="ma-1"
               color="error"
               plain
-              @click="deleteCustomer(user[id])"
+              @click="deleteCustomer(user.id)"
             >
               Delete
             </v-btn>
@@ -34,6 +34,9 @@
         </tbody>
       </template>
     </v-simple-table>
+    <div class="my-2">
+      <v-btn color="warning" fab dark></v-btn>
+    </div>
   </v-app>
 </template>
 
@@ -43,14 +46,14 @@ export default {
   data() {
     return {
       user: [],
-      id: 0,
     };
   },
 
   mounted() {
     axios({
       method: "get",
-      url: "http://localhost:4000/api/users/",
+
+      url: "http://3.86.160.80:8080/",
       format: "json",
     }).then((response) => (this.user = response.data));
   },
@@ -58,7 +61,7 @@ export default {
     async deleteCustomer(id) {
       axios({
         method: "delete",
-        url: `http://localhost:4000/api/users/${id}`,
+        url: `http://3.86.160.80:8080/api/users/${id}`,
         format: "json",
       }).then((data) => {
         console.log(data);
